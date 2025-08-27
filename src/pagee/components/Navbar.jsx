@@ -37,12 +37,12 @@ const Navbar = () => {
   Dorchester Center, MA 02124
 </p>
 
-<h3 className="text-lg font-semibold mb-1 mt-5">Work Hours mt-25</h3>
+<h3 className="text-lg font-semibold mb-1 mt-5">Work Hours </h3>
 <p className="text-gray-700">
   Monday to Friday: 7AM–7PM <br />
   Weekend: 10AM–5PM
 </p>
-            <div className="flex space-x-4 mt-25">
+            <div className="flex space-x-4 mt-30">
   <FaFacebook className="text-gray-700 text-2xl hover:text-violet-600 cursor-pointer" />
   <AiFillInstagram className="text-gray-700 text-2xl hover:text-violet-600 cursor-pointer" />
 </div>
