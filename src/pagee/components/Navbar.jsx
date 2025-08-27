@@ -25,15 +25,12 @@ const Navbar = () => {
           </button>
         
           <ul className="hidden md:flex gap-8 ml-8">
-            <li>Home</li>
-            <li>Contact</li>
-          </ul>
         </nav>
       
         {menuOpen && (
           <ul className="md:hidden flex flex-col bg-white shadow-md p-4 absolute top-full left-0 w-full z-20">
-            <li className="py-2 border-b">Home</li>
-            <li className="py-2 border-b">Contact</li>
+           <a href="home" className="py-2 border-b font-bold hover:bg-gray-100 cursor-pointer">">Home</a>
+            <a href="" className="py-2 border-b font-bold hover:bg-gray-100 cursor-pointer">Contact</a>
             <li className="py-2">Address: Kigali, Rwanda</li>
           </ul>
         )}
