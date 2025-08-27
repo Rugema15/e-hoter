@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { FaBars } from 'react-icons/fa';
 import home from '../../assets/home.jpg';
+import { FaFacebook } from "react-icons/fa";
+import { AiFillInstagram } from "react-icons/ai";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -29,7 +31,22 @@ const Navbar = () => {
           <ul className="md:hidden flex flex-col bg-white shadow-md p-4 absolute top-full left-0 w-full z-20">
            <a href="home" className="py-2 border-b font-bold hover:bg-gray-100 cursor-pointer">Home</a>
             <a href=" contact" className="py-2 border-b font-bold hover:bg-gray-100 cursor-pointer">Contact</a>
-            <li className="py-2">Address: Kigali, Rwanda</li>
+            <h3 className="text-lg font-semibold mb-1">Address</h3>
+     <p className="text-gray-700 mb-4">
+  304 Nort Cardinal St. <br />
+  Dorchester Center, MA 02124
+</p>
+
+<h3 className="text-lg font-semibold mb-1 mt-5">Work Hours mt-25</h3>
+<p className="text-gray-700">
+  Monday to Friday: 7AM–7PM <br />
+  Weekend: 10AM–5PM
+</p>
+            <div className="flex space-x-4">
+  <FaFacebook className="text-violet-600 text-2xl hover:text-violet-800 cursor-pointer" />
+  <AiFillInstagram className="text-violet-600 text-2xl hover:text-violet-800 cursor-pointer" />
+</div>
+            
           </ul>
         )}
       </header>
