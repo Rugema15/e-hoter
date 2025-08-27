@@ -23,8 +23,6 @@ const Navbar = () => {
           >
             <FaBars />
           </button>
-        
-          <ul className="hidden md:flex gap-8 ml-8">
         </nav>
       
         {menuOpen && (
