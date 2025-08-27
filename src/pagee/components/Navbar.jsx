@@ -42,7 +42,7 @@ const Navbar = () => {
   Monday to Friday: 7AM–7PM <br />
   Weekend: 10AM–5PM
 </p>
-            <div className="flex space-x-4">
+            <div className="flex space-x-4 mt-25">
   <FaFacebook className="text-gray-700 text-2xl hover:text-violet-600 cursor-pointer" />
   <AiFillInstagram className="text-gray-700 text-2xl hover:text-violet-600 cursor-pointer" />
 </div>
