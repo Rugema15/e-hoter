@@ -1,58 +1,59 @@
-import React, { useEffect, useState } from 'react'
-
-const stats = [
-  { label: 'Travelers Served', value: 500000 },
-  { label: 'Cups of coffee', value: 50000 },
-  { label: 'Accomodation Guests', value: 135000 },
-  { label: 'Retail Customers', value: 250000 },
-];
-
-function formatK(num) {
-  if (num >= 1000) {
-    return (num / 1000).toFixed(0) + 'k';
-  }
-  return num;
-}
+import React from 'react'
+import { FaUsers, FaBuilding, FaGlobe, FaStar } from 'react-icons/fa'
 
 const Percentage = () => {
-  const [counts, setCounts] = useState(stats.map(() => 0));
-
-  useEffect(() => {
-    const intervals = stats.map((stat, i) => {
-      return setInterval(() => {
-        setCounts(prev =>
-          prev.map((count, idx) =>
-            idx === i && count < stat.value
-              ? count + Math.ceil(stat.value / 100)
-              : count
-          )
-        );
-      }, 20);
-    });
-
-    return () => intervals.forEach(clearInterval);
-  }, []);
-
-  useEffect(() => {
-    stats.forEach((stat, i) => {
-      if (counts[i] > stat.value) {
-        setCounts(prev =>
-          prev.map((count, idx) => (idx === i ? stat.value : count))
-        );
-      }
-    });
-  }, [counts]);
+  const stats = [
+    {
+      icon: <FaUsers className="text-4xl text-white" />,
+      number: "500+",
+      label: "Happy Customers",
+      description: "Satisfied clients across Rwanda and Kenya"
+    },
+    {
+      icon: <FaBuilding className="text-4xl text-white" />,
+      number: "15+",
+      label: "Business Units",
+      description: "Diversified portfolio of investments"
+    },
+    {
+      icon: <FaGlobe className="text-4xl text-white" />,
+      number: "2",
+      label: "Countries",
+      description: "Operating in Rwanda and Kenya"
+    },
+    {
+      icon: <FaStar className="text-4xl text-white" />,
+      number: "8+",
+      label: "Years Experience",
+      description: "Building trust and excellence"
+    }
+  ];
 
   return (
-    <div className='bg-[#0a1f44] py-12 px-10 flex flex-wrap gap-10 px-8 py-6 p-30'>
-      {stats.map((stat, i) => (
-        <div key={stat.label} className='max-w-7xl mx-auto gap-5 text-center'>
-          <h2 className='text-4xl font-bold text-white'>
-            {formatK(counts[i])}
-          </h2>
-          <p className='text-violet-600 text-lg'>{stat.label}</p>
+    <div className="w-full bg-[#102136]">
+      <div className="max-w-7xl mx-auto px-6 py-16">
+        <div className="text-center mb-16">
+          <h2 className="section-title fade-in text-white">Our Impact in Numbers</h2>
+          <p className="section-subtitle fade-in text-white">
+            Discover the scale and reach of VHL Group's operations
+          </p>
         </div>
-      ))}
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {stats.map((stat, index) => (
+            <div key={index} className="text-center scale-in" style={{ animationDelay: `${index * 100}ms` }}>
+              <div className="   hover:border-white/40 transition-all duration-300 hover:scale-105">
+                <div className="flex justify-center mb-4">
+                  {stat.icon}
+                </div>
+                <h3 className="text-4xl font-bold text-white mb-2">{stat.number}</h3>
+                <h4 className="text-xl font-semibold text-white mb-2">{stat.label}</h4>
+                <p className="text-white/80 text-sm leading-relaxed">{stat.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   )
 }

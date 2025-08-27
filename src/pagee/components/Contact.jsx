@@ -5,50 +5,63 @@ import { MdEmail } from "react-icons/md";
 import { IoIosTime } from "react-icons/io";
 
 const Contact = () => {
+  const contactInfo = [
+    {
+      icon: <FaMapMarked className="text-4xl text-[#102136] group-hover:text-white transition-colors duration-300" />,
+      title: "Physical Address",
+      content: "RN3 Muhazi, Muhazi, Rwanda",
+      delay: "0ms"
+    },
+    {
+      icon: <IoIosTime className="text-4xl text-[#102136] group-hover:text-white transition-colors duration-300" />,
+      title: "Work Hours",
+      content: "Monday to Sunday: 12pm–11pm",
+      delay: "100ms"
+    },
+    {
+      icon: <MdEmail className="text-4xl text-[#102136] group-hover:text-white transition-colors duration-300" />,
+      title: "Email Address",
+      content: "info@vhl.co.rw",
+      delay: "200ms"
+    },
+    {
+      icon: <MdOutlinePhoneIphone className="text-4xl text-[#102136] group-hover:text-white transition-colors duration-300" />,
+      title: "Phone Numbers",
+      content: "+250 785 922 275",
+      delay: "300ms"
+    }
+  ];
+
   return (
-
-    <div class="flex flex-wrap gap-5 px-8 py-6 p-35 h-120 mt-30">
-      <h2 className='text-3xl font-bold text-center w-full mb-8'>Contact Us</h2>
-
-      <div class="flex flex-col items-center gap-4 p-6 group bg-white shadow-md p-15 rounded-md w-[230px] 
-border border-gray-200 hover:border-blue-500 hover:bg-violet-600 
-hover:scale-105 transition duration-300 cursor-pointer  ">
-        <div className="flex justify-center items-center gap-3">
-          <FaMapMarked class='text-3xl  text-violet-800 cursor-pointer group-hover:text-white' />
-        </div>
-        <h3 class="text-violet-800 font-extrabold text-lg group-hover:text-white">Physical Address​</h3>
-
-        <p class="text-gray-700 group-hover:text-white">
-          RN3 Muhazi.
-          Muhazi</p>
-      </div>
-
-      <div class=" flex flex-col items-center gap-4 p-6 group bg-white shadow-md p-10 rounded-md w-[230px]  border 
-border-gray-200 hover:border-blue-500 hover:bg-violet-600 hover:scale-105
- transition duration-300 cursor-pointer  h-50">
-        <div className="flex justify-center items-center">
-          <IoIosTime className="text-3xl  text-violet-800 cursor-pointer group-hover:text-white" />
-        </div>
-       <h3 class="text-violet-800 font-extrabold text-lg group-hover:text-white">Work Hours</h3>
-        <p class="text-gray-700 text-center group-hover:text-white">
-          Monday to Sunday: 12pm–11pm
+    <div className="max-w-7xl mx-auto px-6 py-16">
+      <div className="text-center mb-16">
+        <h2 className="section-title fade-in">Contact Us</h2>
+        <p className="section-subtitle fade-in">
+          Get in touch with us for any inquiries or to learn more about our services
         </p>
       </div>
-     <div class="flex flex-col items-center gap-4 p-6 group bg-white shadow-md rounded-md w-[230px] h-50 border border-gray-200 hover:border-blue-500 hover:bg-violet-600 hover:scale-105 transition duration-300 cursor-pointer">
-  <MdEmail class="text-3xl text-violet-800 group-hover:text-white" />
-  <h3 class="text-violet-800 font-extrabold text-lg group-hover:text-white">Email Address</h3>
-  <p class="text-gray-700 text-center group-hover:text-white">info@vhl.co.rw</p>
-</div>
- <div class="flex flex-col items-center gap-4 p-6 group bg-white shadow-md rounded-md w-[230px] h-50 border border-gray-200 hover:border-blue-500 hover:bg-violet-600 hover:scale-105 transition duration-300 cursor-pointer">
-        <div className="flex justify-center items-center ">
-          <MdOutlinePhoneIphone className='text-3xl  text-violet-800 cursor-pointer group-hover:text-white ' />
-        </div>
-        <h3 class="text-violet-800 font-extrabold text-lg group-hover:text-white
-          ">Phone Numbers</h3>
-        <p class="text-gray-700 group-hover:text-white">+250 785 922 275</p>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {contactInfo.map((info, index) => (
+          <div 
+            key={index}
+            className="group bg-white p-8 rounded-2xl border-2 border-[#EFEFEF] hover:border-[#102136] hover:bg-[#102136] hover:scale-105 transition-all duration-500 cursor-pointer hover-lift scale-in"
+            style={{ animationDelay: info.delay }}
+          >
+            <div className="flex flex-col items-center text-center gap-4">
+              <div className="flex justify-center items-center">
+                {info.icon}
+              </div>
+              <h3 className="text-[#102136] font-bold text-xl group-hover:text-white transition-colors duration-300">
+                {info.title}
+              </h3>
+              <p className="text-gray-700 group-hover:text-white transition-colors duration-300 text-center leading-relaxed">
+                {info.content}
+              </p>
+            </div>
+          </div>
+        ))}
       </div>
-
-
     </div>
   )
 }
